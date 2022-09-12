@@ -1,8 +1,8 @@
 # Simple Shell
 ## Description
-simple unix shell with working jobs, pipes, forking, exec etc. written for Operating Systems course
+simple unix shell with working jobs (foreground and background), pipes, redirects, forking, exec etc. written for Operating Systems course
 
-parts not inside `#STUDENT` (mainly outside jobs.c, shell.c and command.c) were provided by the lecturer, also some CSAPP libraries were used 
+parts not inside `#STUDENT` (mainly outside `jobs.c`, `shell.c` and `command.c`) were provided by the lecturer, also some CSAPP libraries were used 
 
 ## How to run
 `make` -> for building whole project   
