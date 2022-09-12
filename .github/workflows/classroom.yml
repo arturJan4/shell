@@ -1,0 +1,23 @@
+name: GitHub Classroom Workflow
+
+on: [push]
+
+jobs:
+  build:
+    name: Autograding
+    runs-on: ubuntu-latest
+    container: cahirwpz/ii-so:latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Check code formatting
+        run: ./run-clang-format.sh
+      - name: Check for unauthorized modifications
+        run: ./check-files.py
+      - uses: education/autograding@v1
+      - name: 'Archive test results'
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-results
+          path: sh-tests.*.log
+          retention-days: 1
